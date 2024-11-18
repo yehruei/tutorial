@@ -1,0 +1,8 @@
+{
+    "name": "Green Light Go",
+    "short_name": "App",
+    "start_url": "/my-website/#/application",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+}

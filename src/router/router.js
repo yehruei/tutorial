@@ -1,16 +1,18 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 import store from "../store/store";
 import Layout from "../components/Layout/layout.vue"
 import mLayout from "../components/Layout/mLayout.vue"
 import home from "../components/home/home.vue"
-import project from "../components/project/project.vue"
-import blog from "../components/blog/blog.vue"
+import mission from "../components/mission/mission.vue"
+import development from "../components/development/development.vue"
 import about from "../components/about/about.vue"
+import support from "../components/support/support.vue"
+import application from "../components/app/application.vue"
 
 const routes = [
     {
-        path: "/Magnet---Build-Your-First-Website", // 这里需要改成你 Github 仓库的名称
-        name: "landing",
+        path: "/",
+        name: "greenlight-go",
         component: store.state.display.isMobile ? mLayout : Layout,
         children: [
             {
@@ -19,14 +21,24 @@ const routes = [
                 component: home
             },
             {
-                path: "project",
-                name: "project",
-                component: project
+                path: "application",
+                name: "application",
+                component: application
             },
             {
-                path: "blog",
-                name: "blog",
-                component: blog
+                path: "design-detail",
+                name: "mission",
+                component: mission
+            },
+            {
+                path: "public-support",
+                name: "support",
+                component: support
+            },
+            {
+                path: "development-history",
+                name: "development",
+                component: development
             },
             {
                 path: "about",
@@ -34,13 +46,13 @@ const routes = [
                 component: about
             }
         ]
-    },
+    }
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory('/my-website/'),
     routes,
-});
+  });  
 
 router.afterEach(() => {
     window.scrollTo(0, 0)
