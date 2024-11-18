@@ -72,7 +72,7 @@ function handleFinish() {
                 <div>
                     <div style="position: relative; margin-bottom: 12px">
                         <n-image preview-disabled width="280"
-                            src="./tutorial/GreenLightGo/app/traffic-light-pedestrian.png"></n-image>
+                            src="./tutorial/GreenLightGo/app/traffic-light-pedestrian.webp"></n-image>
                         <div :class="['countdown', !light ? 'red-glowing-text' : 'green-glowing-text']"
                             :style="{ color: lightColor }">
                             <n-countdown ref="countdownRef" :duration="duration" :render="renderCountdown"

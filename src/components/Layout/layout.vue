@@ -11,7 +11,7 @@ const isApp = router.currentRoute.value.name.includes('app')
             <n-flex :align="'center'" :justify="'space-between'">
                 <n-flex :align="'center'" class="logo" @click="router.push({ name: 'home' })">
                     <n-avatar :width="24" style="border-radius: 8px;"
-                        src="./tutorial/GreenLightGo/logo.png"></n-avatar>
+                        src="./tutorial/GreenLightGo/logo/apple-touch-icon.png"></n-avatar>
                     <b>
                         GreenLight
                         <span class="primaryColor">Go</span>
