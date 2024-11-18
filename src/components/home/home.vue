@@ -12,7 +12,7 @@ const showModal = ref(false);
                 <n-grid style="align-items: center;">
                     <n-gi :span="12">
                         <n-flex :justify="'center'">
-                            <n-image :width="220" src="./my-website/GreenLightGo/home/app-home.png"
+                            <n-image :width="220" src="./tutorial/GreenLightGo/home/app-home.png"
                                 preview-disabled></n-image>
                         </n-flex>
                     </n-gi>
@@ -24,7 +24,7 @@ const showModal = ref(false);
                         </div>
                         <div>
                             <!-- <n-button type="primary" round class="startBtn" tag="a"
-                                href="https://oscarlin7.github.io/my-website/#/application" target="_blank">
+                                href="https://oscarlin7.github.io/tutorial/#/application" target="_blank">
                                 Start Here
                             </n-button> -->
                             <n-button type="primary" round class="startBtn" @click="showModal = true">
@@ -40,7 +40,7 @@ const showModal = ref(false);
                 <n-grid style="align-items: center;">
                     <n-gi :span="10" style="text-align: center;">
                         <div>
-                            <n-image :src="'./my-website/GreenLightGo/mission/WechatIMG5.jpg'" width="180"></n-image>
+                            <n-image :src="'./tutorial/GreenLightGo/mission/WechatIMG5.jpg'" width="180"></n-image>
                         </div>
                         <div style="margin-top: 24px">
                             <n-text :depth="3">
@@ -63,7 +63,7 @@ const showModal = ref(false);
                     </n-gi>
                     <n-gi :span="10" style="text-align: center;">
                         <div>
-                            <n-image :src="'./my-website/GreenLightGo/mission/WechatIMG6.jpg'" height="240"></n-image>
+                            <n-image :src="'./tutorial/GreenLightGo/mission/WechatIMG6.jpg'" height="240"></n-image>
                         </div>
                         <div style="margin-top: 24px">
                             <n-text :depth="3">

@@ -41,7 +41,7 @@ function handleFinish() {
 }
 
 // function readJSON(path) {
-//     return axios('my-website/GreenLightGo/app/light.json' + path + '.json')
+//     return axios('tutorial/GreenLightGo/app/light.json' + path + '.json')
 // }
 </script>
 
@@ -72,7 +72,7 @@ function handleFinish() {
                 <div>
                     <div style="position: relative; margin-bottom: 12px">
                         <n-image preview-disabled width="280"
-                            src="./my-website/GreenLightGo/app/traffic-light-pedestrian.png"></n-image>
+                            src="./tutorial/GreenLightGo/app/traffic-light-pedestrian.png"></n-image>
                         <div :class="['countdown', !light ? 'red-glowing-text' : 'green-glowing-text']"
                             :style="{ color: lightColor }">
                             <n-countdown ref="countdownRef" :duration="duration" :render="renderCountdown"
@@ -131,7 +131,7 @@ function handleFinish() {
                                         :indicator-text-color="themeVars.successColor" :show-indicator="false" />
                                     <div style="font-size: 64px"><b>请通行</b></div>
                                     <n-qr-code id="qr-code"
-                                        value="https://oscarlin7.github.io/my-website/#/application" />
+                                        value="https://oscarlin7.github.io/tutorial/#/application" />
                                 </div>
                             </n-flex>
                         </div>
