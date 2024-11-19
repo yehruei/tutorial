@@ -12,21 +12,15 @@ const showModal = ref(false);
                 <n-grid style="align-items: center;">
                     <n-gi :span="12">
                         <n-flex :justify="'center'">
-                            <n-image :width="220" src="./tutorial/GreenLightGo/home/app-home.webp"
-                                preview-disabled></n-image>
+                            <n-image :width="220" src="./tutorial/home/app-home.webp" preview-disabled></n-image>
                         </n-flex>
                     </n-gi>
                     <n-gi :span="12">
                         <div>
-                            <div class="slogan">Your ultimate tool for predicting traffic light timings.</div>
-                            <div class="subtitle">With just a tap, you can know if you’ll make it through the next green
-                                light, helping you save time and avoid frustration.</div>
+                            <div class="slogan">Etiam ipsum mus posuere sollicitudin adipiscing senectus.</div>
+                            <div class="subtitle">Luctus mus ipsum facilisi a inceptos ut.</div>
                         </div>
                         <div>
-                            <!-- <n-button type="primary" round class="startBtn" tag="a"
-                                href="https://oscarlin7.github.io/tutorial/#/application" target="_blank">
-                                Start Here
-                            </n-button> -->
                             <n-button type="primary" round class="startBtn" @click="showModal = true">
                                 Start Here
                             </n-button>
@@ -40,7 +34,7 @@ const showModal = ref(false);
                 <n-grid style="align-items: center;">
                     <n-gi :span="10" style="text-align: center;">
                         <div>
-                            <n-image :src="'./tutorial/GreenLightGo/mission/WechatIMG5.webp'" width="180"></n-image>
+                            <n-image :src="'./tutorial/mission/WechatIMG5.webp'" width="180"></n-image>
                         </div>
                         <div style="margin-top: 24px">
                             <n-text :depth="3">
@@ -63,7 +57,7 @@ const showModal = ref(false);
                     </n-gi>
                     <n-gi :span="10" style="text-align: center;">
                         <div>
-                            <n-image :src="'./tutorial/GreenLightGo/mission/WechatIMG6.webp'" height="240"></n-image>
+                            <n-image :src="'./tutorial/mission/WechatIMG6.webp'" height="240"></n-image>
                         </div>
                         <div style="margin-top: 24px">
                             <n-text :depth="3">
@@ -93,7 +87,7 @@ const showModal = ref(false);
         .n-image {
             border: 2px solid black;
             box-shadow: var(--boxShadow-deep);
-            border-radius: 20px;
+            border-radius: 32px;
         }
 
         .slogan {

@@ -72,7 +72,7 @@ onMounted(() => {
                         <n-flex :justify="'center'">
                             <n-flex vertical>
                                 <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/GreenLightGo/mission/WechatIMG5.webp" preview-disabled></n-image>
+                                    src="./tutorial/mission/WechatIMG5.webp" preview-disabled></n-image>
                                 <n-flex :justify="'center'">
                                     <n-text :depth="3"></n-text>
                                 </n-flex>
@@ -89,7 +89,7 @@ onMounted(() => {
                         <n-flex :justify="'center'">
                             <n-flex vertical>
                                 <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/GreenLightGo/mission/redlight.webp" preview-disabled></n-image>
+                                    src="./tutorial/mission/redlight.webp" preview-disabled></n-image>
                             </n-flex>
                         </n-flex>
                     </n-gi>
@@ -119,7 +119,7 @@ onMounted(() => {
                         <n-flex :justify="'center'">
                             <n-flex vertical>
                                 <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/GreenLightGo/mission/greenlight.webp" preview-disabled></n-image>
+                                    src="./tutorial/mission/greenlight.webp" preview-disabled></n-image>
                             </n-flex>
                         </n-flex>
                     </n-gi>
