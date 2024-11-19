@@ -40,7 +40,7 @@ jobs:
         run: npm run build
 
       - name: Create CNAME file
-        run: echo 'yehruei.site' > ./dist/CNAME
+        run: echo 'tutorial.yehruei.site' > ./dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
