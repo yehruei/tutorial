@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import router from '../../router/router'
+import 'animate.css'
 
 const isApp = router.currentRoute.value.name.includes('app')
 </script>
@@ -9,7 +10,8 @@ const isApp = router.currentRoute.value.name.includes('app')
     <n-layout class="container">
         <n-layout-header v-if="!isApp" class="header">
             <n-flex :align="'center'" :justify="'space-between'">
-                <n-flex :align="'center'" class="logo" @click="router.push({ name: 'home' })">
+                <n-flex :align="'center'" class="logo animate__animated animate__fadeInDown"
+                    @click="router.push({ name: 'home' })">
                     <n-avatar :width="24" style="border-radius: 8px;"
                         src="./tutorial/logo/apple-touch-icon.png"></n-avatar>
                     <b>
@@ -18,25 +20,22 @@ const isApp = router.currentRoute.value.name.includes('app')
                     </b>
                 </n-flex>
                 <n-flex :size="24">
-                    <!-- <n-button text @click="router.push({ name: 'mission' })">
+                    <n-button class="animate__animated animate__fadeInDown show1" text
+                        @click="router.push({ name: 'mission' })">
                         Design Detail
                     </n-button>
-                    <n-button text @click="router.push({ name: 'development' })">
+                    <n-button class="animate__animated animate__fadeInDown show2" text
+                        @click="router.push({ name: 'development' })">
                         Development History
-                    </n-button> -->
-                    <n-button text @click="router.push({ name: 'about' })">
+                    </n-button>
+                    <n-button class="animate__animated animate__fadeInDown show3" text
+                        @click="router.push({ name: 'about' })">
                         About
                     </n-button>
-                    <!-- <n-button round style="box-shadow: var(--boxShadow-light);"
-                        @click="router.push({ name: 'support' })">
-                        Public Support
-                    </n-button> -->
                 </n-flex>
             </n-flex>
         </n-layout-header>
-        <n-layout-content>
-            <router-view />
-        </n-layout-content>
+        <router-view />
         <n-layout-footer v-if="!isApp">
             <n-flex :justify="'right'">
                 <div>2024 Copyright © <span class="primaryColor">Magnet</span>. All rights reserved.</div>
@@ -46,6 +45,8 @@ const isApp = router.currentRoute.value.name.includes('app')
 </template>
 
 <style lang='less' scoped>
+@import 'animate.css';
+
 .container {
     min-height: 100vh;
 
@@ -71,5 +72,17 @@ const isApp = router.currentRoute.value.name.includes('app')
             color: var(--primary-color)
         }
     }
+}
+
+.show1 {
+    --animate-duration: 1s;
+}
+
+.show2 {
+    --animate-duration: 2s;
+}
+
+.show3 {
+    --animate-duration: 3s;
 }
 </style>

@@ -6,8 +6,7 @@ import home from "../components/home/home.vue"
 import mission from "../components/mission/mission.vue"
 import development from "../components/development/development.vue"
 import about from "../components/about/about.vue"
-import support from "../components/support/support.vue"
-import application from "../components/app/application.vue"
+import tutorial from "../components/tutorial/tutorial.vue"
 
 const routes = [
     {
@@ -21,19 +20,9 @@ const routes = [
                 component: home
             },
             {
-                path: "application",
-                name: "application",
-                component: application
-            },
-            {
                 path: "design-detail",
                 name: "mission",
                 component: mission
-            },
-            {
-                path: "public-support",
-                name: "support",
-                component: support
             },
             {
                 path: "development-history",
@@ -44,6 +33,11 @@ const routes = [
                 path: "about",
                 name: "about",
                 component: about
+            },
+            {
+                path: "tutorial",
+                name: "tutorial",
+                component: tutorial
             }
         ]
     }
@@ -53,7 +47,7 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory('/tutorial/'),
     routes,
-  });  
+});
 
 router.afterEach(() => {
     window.scrollTo(0, 0)
