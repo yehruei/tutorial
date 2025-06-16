@@ -1,12 +1,18 @@
 <script lang='ts' setup>
 import { ref, onMounted, reactive } from 'vue'
 import { Application } from '@splinetool/runtime';
-import { gsap } from 'gsap/dist/gsap';
-import { SplitText } from 'gsap/SplitText';
+import { gsap } from 'gsap';
+import {
+    SplitText,
+    ScrollSmoother,
+    ScrollTrigger
+} from 'gsap/all';
 
 // template ref
 const canvas = ref(null)
 const readyRender = ref(false);
+const smoother = ref(null);
+const scroller = ref(null);
 
 // spline state
 const state = reactive({
@@ -22,12 +28,28 @@ onMounted(async () => {
     // await app.load(state.spline.scene)
     // state.spline.app = app;
     // state.spline.isLoaded = true;
-    gsap.to(".box", {
-        x: 200,
+    gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);
+
+    smoother.value = ScrollSmoother.create({
+        smooth: 1,
+        smoothTouch: 0.1,
+        effects: true,
+    })
+
+    gsap.to(".box-c", {
+        scrollTrigger: {
+            trigger: ".box-c",
+            pin: true,
+            start: "top center",
+            end: "+=300",
+            scrub: 3,
+            markers: true,
+        },
+        x: "20rem",
         rotation: 360,
         duration: 3
     });
-    gsap.registerPlugin(SplitText);
+
     let split = SplitText.create(".text", {
         type: "words"
     });
@@ -37,16 +59,31 @@ onMounted(async () => {
         stagger: 0.05
     })
 })
+
+function handleJump() {
+    smoother.value.scrollTo(".box-c", true, "top center");
+}
 </script>
 
 <template>
     <div class="Container">
-        <div class="tag-box">
-            <div class="tag">This is a test!</div>
+        <div>
+            <div class="tag-box">
+                <div class="tag" @click="handleJump">Let's JUMP to C</div>
+            </div>
+            <h1 class="text">{{ "Tutorial Page" }}</h1>
+            <!-- <canvas ref="canvas"></canvas> -->
+            <div class="rollingBox graident-green"></div>
+            <div class="box box-a color-a" data-speed="clamp(0.5)">
+                <b>a</b>
+            </div>
+            <div class="box box-b color-b" data-speed="clamp(0.8)">
+                <b>b</b>
+            </div>
+            <div class="box box-c color-c" data-speed="1.5">
+                <b>c</b>
+            </div>
         </div>
-        <h1 class="text">{{ "Tutorial APP" }}</h1>
-        <!-- <canvas ref="canvas"></canvas> -->
-        <div class="box graident-green"></div>
     </div>
 </template>
 
@@ -56,24 +93,20 @@ onMounted(async () => {
     padding: 0;
     box-sizing: border-box;
     padding: 24px;
-    min-height: calc(100vh - 86.4px);
+    // min-height: calc(100vh - 86.4px);
+    height: 4000px;
+    background: black;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .07) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, .07) 2px, transparent 2px),
+        linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-.image-gradient {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0.5;
-}
-
-.layer-blur {
-    height: 0;
-    width: 30rem;
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    box-shadow: 0 0 700px 1;
-    rotate: -30deg;
+.text {
+    color: #fff;
 }
 
 .tag-box {
@@ -94,10 +127,55 @@ onMounted(async () => {
     }
 }
 
+.rollingBox {
+    width: 5rem;
+    height: 5rem;
+    background: var(--gradient-emerald-city);
+    border-radius: 0.5rem;
+}
+
 .box {
-    width: 30px;
-    height: 30px;
-    background: #000;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    line-height: 100px;
+    text-align: center;
+    will-change: transform;
+}
+
+.box-a {
+    top: 12rem;
+}
+
+.box-b {
+    top: 36rem;
+}
+
+.box-c {
+    top: 72rem;
+}
+
+.color-a {
+    background: var(--gradient-macha), url(/tutorial/tutorial/noise-e82662fe.png);
+    background-blend-mode: color-dodge
+}
+
+.color-b {
+    background: var(--gradient-summer-fair);
+    background-blend-mode: color-dodge
+}
+
+.color-c {
+    background: var(--gradient-lipstick), url(/tutorial/tutorial/noise-e82662fe.png);
+    background-blend-mode: color-dodge
 }
 
 .tag-box .tag {
@@ -117,6 +195,6 @@ onMounted(async () => {
 }
 
 .tag-box .tag:hover {
-    color: #9851da;
+    color: #a56ed8;
 }
 </style>

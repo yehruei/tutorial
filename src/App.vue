@@ -22,7 +22,7 @@ const themeOverrides = {
   <n-config-provider :theme-overrides="themeOverrides">
     <n-dialog-provider>
       <n-message-provider>
-        <div class="app">
+        <div id="smooth-content" class="app">
           <router-view />
         </div>
       </n-message-provider>
